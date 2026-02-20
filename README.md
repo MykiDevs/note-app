@@ -14,3 +14,6 @@ docker compose up --build
 ```
 ## API Reference
 http://localhost:8080/swagger-ui/index.html`
+
+## License
+[MIT](https://github.com/MykiDevs/note-app/blob/main/LICENSE)
