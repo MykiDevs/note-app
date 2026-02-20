@@ -1,8 +1,12 @@
-# REST API NOTE A
+# REST API NOTE APP
 A simple backend service for managing notes. Has JUnit and IT tests.
 
-## Tech Stack
+## Features
+- **RestTestClient**: for JUnit and Integration tests.
+- **Virtual Threads**: uses virtual threads for enchanced performance. 
+- **Testcontainers**: enables better Integration tests.
 
+## Tech Stack
 - **Java 25**
 - **Spring Boot 4**
 - **MongoDB**
