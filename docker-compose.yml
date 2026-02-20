@@ -1,0 +1,27 @@
+services:
+  mongo:
+    image: mongo:8.0
+    restart: unless-stopped
+    container_name: mongo
+    ports:
+      - "${MONGO_PORT}:27017"
+    networks:
+      - backend
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_DB}
+
+  note-app:
+    build: .
+    container_name: note-app
+    ports:
+      - "${APP_PORT}:8080"
+    restart: always
+    networks:
+      - backend
+    environment:
+      SPRING_MONGODB_URI: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@mongo:${MONGO_PORT}/${MONGO_DB}?authSource=admin
+networks:
+  backend:
+    driver: bridge
