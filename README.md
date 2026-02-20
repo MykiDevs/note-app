@@ -1,4 +1,4 @@
-# Simple note management app
+# Simple REST API note management backend app
 ### Prerequisites
 - Docker
 - Java 25
