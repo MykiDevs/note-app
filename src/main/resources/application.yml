@@ -1,0 +1,8 @@
+spring:
+  mongodb:
+    uri: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@localhost:${MONGO_PORT}/${MONGO_DB}?authSource=admin
+  application:
+    name: note-app
+  threads:
+    virtual:
+      enabled: true
