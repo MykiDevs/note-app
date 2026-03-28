@@ -12,18 +12,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Set up JDK 21
+      - name: Set up JDK 25
         uses: actions/setup-java@v4
         with:
           java-version: 25
           distribution: 'temurin'
           cache: 'gradle'
-      - name: Start Docker Compose Prod
-        run: docker compose up -d
-      - name: Start Docker Compose Dev
-        run: docker compose -f ./docker-compose-dev.yml up
       - name: Grant execute permissions for gradlew
         run: chmod +x gradlew
 
       - name: Run Module Tests
-        run: ./gradlew :user-service:test :noti-service:test
+        run: ./gradlew :note-app:test
