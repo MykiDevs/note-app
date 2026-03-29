@@ -22,4 +22,4 @@ jobs:
         run: chmod +x gradlew
 
       - name: Run Module Tests
-        run: ./gradlew :note-app:test
+        run: ./gradlew test
